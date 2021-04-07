@@ -1,0 +1,2 @@
+gcc -fPIC -shared DynamicArray.cpp -o libdynamicArray.so
+gcc main.cpp -L. -ldynamicArray -o main

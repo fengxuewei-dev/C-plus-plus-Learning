@@ -1,0 +1,2 @@
+gcc -fPIC -shared CircylarLinkedlists.c -o libcircylarLinkedlists.so
+gcc main.c -o main -L ./ -lcircylarLinkedlists -Wl,-rpath ./

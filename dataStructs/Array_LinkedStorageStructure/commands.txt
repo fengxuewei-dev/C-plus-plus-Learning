@@ -1,0 +1,2 @@
+gcc -fPIC -shared LinkList.c -o liblinkList.so
+gcc main.c -o main -L ./ -llinkList -Wl,-rpath ./
