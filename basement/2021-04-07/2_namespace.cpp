@@ -31,6 +31,7 @@ int main(void){
     spaceB::teacher_t t1;
     spaceC::teacher_t t2;
 
+    // << 是一种 操作符的重载 重写一个运算符    
     std::cout << spaceA::g_b << std::endl;
     return 0;
 }

@@ -66,8 +66,8 @@ void test01(){
 
     // int &main_a_ref = getA3();  // 这里是 getA3 函数中的局部变量，但是在一个函数调用完成之后，函数内部的变量就会被回收，因此，这里 main_a_ref 也是无效的，出现Segmentation fault (core dumped) 错误
 
-    // cout << "main_a_ref = " << main_a_ref << endl;
-
+    // cout << "main_a_ref = " << main_a_ref << endl; // 当我们执行第一次的时候，可以发现这个值没有发生什么变换，那是因为在 栈空间中，还没有新的函数入栈，局部变量还没有进行覆盖，我们在执行一次可能就好了
+    // cout << "main_a_ref = " << main_a_ref << endl; 
 
     int &main_a_ref = getA4();  // 这个函数返回的是 一个全局数据区的一个变量，因此在函数调用完成之后不对其进行释放，所以我们可以做下面的操作。
     getA4() = 1000; // 也就是对 static int a; 进行 a = 1000 的操作

@@ -57,15 +57,19 @@ void test01(){
 }
 
 
-
+// 指针引用
 int get_mem2(struct teacher * &tp){
+    
     tp = (struct teacher*)malloc(sizeof(struct teacher));
+    
     if(tp == NULL){
         return -1;
     }
     
     tp->id = 30;
+    
     strcpy(tp->name, "wang5");
+
     return 0;
 }
 
