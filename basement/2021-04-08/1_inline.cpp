@@ -1,7 +1,9 @@
 #include <iostream>
 
 using namespace std;
-
+/*
+    内联函数的使用：是为了解决宏函数的弊端
+*/
 void test01();
 
 // 宏函数的定义

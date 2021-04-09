@@ -1,6 +1,6 @@
 /*
     函数重载和函数指针
-    
+    在c++中存在函数重载的概念，在c中是不存在的，否则会直接报错 重定义
 */
 #include <iostream>
 
@@ -33,18 +33,18 @@ int main(void){
 }
 
 void test01(){
-    // 1、
+    // 1、编译器去找合适的调用的函数
     MY_FUNCTION *my = NULL;
 
     my = fun1;
 
     my(10, 20); //    (*my)(10, 20);
 
-    // 2、
+    // 2、编译器去找合适的调用的函数
     MY_FUNCTION_P my_p = fun1;
     my_p(10, 20);
 
-    // 3. 
+    // 3. 在定义的时候就已经指定了函数的指向
     void(*fp3)(int, int) = NULL;
     fp3 = fun1;
 
