@@ -4,6 +4,7 @@
 using namespace std;
 
 class Circles{
+
 public:
     void setRXY(double r, double x, double y);
     void setR(double r);
@@ -18,4 +19,5 @@ private:
     double m_r;
     double m_x;
     double m_y;
+    
 };
