@@ -26,6 +26,11 @@
     同时一个类对象中的成员函数是不在对象中的，在计算类所占字节数的时候，没有类的成员函数以及类的静态成员变量。那么为什么会通过对象名字来调用函数，该函数可以准确的调用属于该对象的数据 ==>> this 指针来获得.
 */
 
+/*
+    static 成员函数的意义，不在于信息共享，数据沟通，而在于管理静态数据成员，完成对静态数据成员的封装
+
+    静态成员函数只能访问静态数据成员。原因在于非静态成员函数在调用的时候，this指针会作为默认的形参传入。而静态成员函数属于类，但是不属于对象，没有this指针
+*/
 using namespace std;
 
 // 定义一个盒子 box，所有的对象都拥有一个相同的高度
@@ -82,8 +87,9 @@ class Students{
             sum = sum - m_score;
             average = sum / n;
         }
-        static double getSum(){
+        static double getSum(){ // 属于类的，没有默认this指针的传入; 但是可以倍对象来调用
             return sum;
+            // return this->sum;
         }
         static double getAverage(){
             return average;
@@ -135,7 +141,11 @@ void test02(){
     st3.~Students();
     st1.printStu();
     st2.printStu();
-
+    Students::getSum();
+    Students::getAverage();
+    cout << "---------------------" << endl;
+    cout << st1.getSum() << endl;   // 可以调用
+    st2.getAverage();
     cout << "总分为： " << Students::getSum() << endl;
     cout << "平均分为: " << Students::getAverage() << endl;
     cout << "---------------------" << endl;
