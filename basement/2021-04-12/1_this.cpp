@@ -11,6 +11,10 @@ using namespace std;
             例如： double getX() const{ // 该const是修饰形参this指针，此时this类型为 const Test * const this;
                 // 类的成员函数（普通函数不具备该性能）
             }
+
+    this 指针代表了指定调用该函数的 对象地址。是 Complex * const this 类型，我们可以通过它来修改内部的数据成员；但是不能修改它的指向，因为 这里的 const 修饰的 指针 this 指针，说明这个指针是常量，不能修改它的内容
+
+    const 修饰的是和他最接近的内容.
 */
 
 class Test{

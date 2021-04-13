@@ -57,7 +57,7 @@ void test01(){
     Complex c1(12, 23);
     Complex c2(11, 32);
 
-    // Complex c3 = c1 + c2; // 又会去全局找，又会去类中找，只能村子一个，否则会出现二义性
+    // Complex c3 = c1 + c2; // 又会去全局找，又会去类中找，只能存在一个，否则会出现二义性
     // 1.
     // Complex c3 = c1 + c2;
     // Complex c3 = operator+(c1, c2); // c1 和 c2 传入的顺序和运算符左值和右值是一致的 （全局函数）
