@@ -84,7 +84,7 @@ istream& operator>>(istream& is, Students& st1){
     strcpy(st1.name, temp);
     return is;
 }
-
+ 
 void test01();
 
 int main(void){
