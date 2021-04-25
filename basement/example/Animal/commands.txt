@@ -1,0 +1,2 @@
+g++ -fPIC -shared Cat.cpp Cat.hpp Dog.cpp Dog.hpp -o libAnimals.so
+g++ main.cpp -o main -L ./ -lAnimals -Wl,-rpath ./

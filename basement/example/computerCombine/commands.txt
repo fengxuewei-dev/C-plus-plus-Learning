@@ -1,0 +1,3 @@
+g++ -fPIC -shared *.cpp *.hpp -o ../libAbstract.so
+g++ -fPIC -shared *.cpp *.hpp -o ../libRealize.so
+g++ main.cpp -o main -L ../ -lAbstract -lRealize -Wl,-rpath ../
