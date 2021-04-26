@@ -21,6 +21,8 @@ class Test{
         }
 
         Test(const Test& another){
+            this->m_x = another.m_x;
+            this->m_y = another.m_y;
             cout << "Test(const Test& another)" << endl;
         }
 
@@ -45,6 +47,10 @@ Test func(){
     return t1;
 } 
 
+void getTT(Test t1){ // 实参涉及到了拷贝构造
+    t1.printXY();
+}
+
 void test01();
 
 int main(void){
@@ -58,5 +64,6 @@ void test01(){
     Test t1 = func(); // 这里也没有发生默认拷贝构造函数的调用
     t1.printXY();
     Test t2 = t1;
+    getTT(t2);
     cout << "Test01 end..." <<endl;
 }
