@@ -4,9 +4,9 @@ template<class T>
 MyArray<T>::MyArray(int capacity){
     this->mCapacity = capacity;
 
-    this->mSize = SIZE_MAX;
+    this->mSize = 0;
 
-    this->pAddr = new T[capacity];    
+    this->pAddr = new T[this->mCapacity];    
 }
 
 template<class T>
@@ -21,12 +21,20 @@ MyArray<T>::~MyArray(){
 
 template<class T>
 MyArray<T>::MyArray(const MyArray<T>& another){
-    this->mCapacity = another.mCapacity;
+    if(*another == this){
+        return;
+    }
     
-    this->pAddr = another.pAddr;
+    this->mCapacity = another.mCapacity;
+    this->mSize = another.mSize;
+    this->pAddr = new T[this->mCapacity];
+
+    for(size_t i = 0; i < another.mSize; i++){
+        this->pAddr[i] = another.pAddr[i];
+    }
 }
 
-template<class T>
-void MyArray<T>::PushBack(T& value){
+// template<class T>
+// void MyArray<T>::PushBack(T& value){
 
-}
+// }
